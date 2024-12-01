@@ -46,10 +46,10 @@ app.get('/', (req, res) => {
 });
 
 // Rotas de usuários
-app.use('/api/users', require('./routes/users'));
+app.use('/api/users', require('./users'));
 
 // Rotas de clientes
-app.use('/api/clients', require('./routes/clients'));
+app.use('/api/clients', require('./clients'));
 
 // Inicialização do servidor
 app.listen(port, () => {
