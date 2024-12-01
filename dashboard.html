@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script defer src="dashboard.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Gerenciamento de Clientes</h1>
+        <button id="logout">Sair</button>
+    </header>
+    <main>
+        <!-- Botões de Ação -->
+        <div class="actions">
+            <button id="sortByDueDate">Ordenar por Data de Vencimento</button>
+            <button id="newClient">Novo Cliente</button>
+        </div>
+        <!-- Tabela de Clientes -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Data de Vencimento</th>
+                    <th>Serviço</th>
+                    <th>WhatsApp</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="clientTable">
+                <!-- Linhas serão inseridas dinamicamente -->
+            </tbody>
+        </table>
+    </main>
+    <!-- Modal de Cadastro/Edição -->
+    <div id="modal" class="hidden">
+        <form id="clientForm">
+            <h2 id="modalTitle">Novo Cliente</h2>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="dueDate">Data de Vencimento:</label>
+            <input type="date" id="dueDate" name="dueDate" required>
+            <label for="service">Serviço:</label>
+            <input type="text" id="service" name="service" required>
+            <label for="whatsapp">WhatsApp:</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required>
+            <div class="modal-actions">
+                <button type="submit">Salvar</button>
+                <button type="button" id="cancel">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

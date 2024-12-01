@@ -1,0 +1,97 @@
+/* Estilo Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+/* Container Principal */
+.container {
+    width: 90%;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.5s;
+}
+
+/* Caixa de Formulários */
+.box {
+    display: flex;
+    width: 200%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.form {
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+    transition: opacity 0.5s;
+}
+
+.form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form button {
+    width: 100%;
+    padding: 10px;
+    background: #4facfe;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.form button:hover {
+    background: #00f2fe;
+}
+
+.form p {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.form span {
+    color: #4facfe;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Ativar/Desativar Formulários */
+.form.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.form:not(.active) {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Animação de Transição */
+.box.move {
+    transform: translateX(-50%);
+}
