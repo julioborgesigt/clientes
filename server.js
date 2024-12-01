@@ -40,9 +40,10 @@ const { Pool } = require('pg');
 app.use(cors());
 app.use(bodyParser.json());
 
-// Rota de teste para verificar conexão com o servidor
+
+// Serve o arquivo HTML
 app.get('/', (req, res) => {
-    res.send('Servidor está funcionando!');
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Rotas de usuários
