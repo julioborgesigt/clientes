@@ -28,6 +28,42 @@ pool.connect((err) => {
     }
 });
 
+require('dotenv').config();
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const { Pool } = require('pg');
+
+
+
+// Middlewares
+app.use(cors());
+app.use(bodyParser.json());
+
+// Rota de teste para verificar conexão com o servidor
+app.get('/', (req, res) => {
+    res.send('Servidor está funcionando!');
+});
+
+// Rotas de usuários
+app.use('/api/users', require('./routes/users'));
+
+// Rotas de clientes
+app.use('/api/clients', require('./routes/clients'));
+
+// Inicialização do servidor
+app.listen(port, () => {
+    console.log(`Servidor rodando na porta ${port}`);
+});
+
+module.exports = pool;
+
+
+
+
+
+
+
 // Rotas
 
 // 1. Obter todos os clientes
