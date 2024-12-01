@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const pool = require('../server');
+const pool = require('./server');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
